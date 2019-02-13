@@ -17,7 +17,9 @@
 package com.gzoltar.core.instr.pass;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import com.gzoltar.core.AgentConfigs;
 import com.gzoltar.core.instr.InstrumentationConstants;
 import com.gzoltar.core.instr.InstrumentationLevel;
@@ -43,14 +45,16 @@ import javassist.bytecode.CodeIterator;
 import javassist.bytecode.ConstPool;
 import javassist.bytecode.MethodInfo;
 import javassist.bytecode.Opcode;
+import javassist.bytecode.analysis.ControlFlow;
+import javassist.bytecode.analysis.ControlFlow.Block;
 
-public class InstrumentationPass implements IPass {
+public class CoveragePass implements IPass {
 
   private final InstrumentationLevel instrumentationLevel;
 
-  private final FieldInstrumentationPass fieldPass = new FieldInstrumentationPass();
+  private final FieldPass fieldPass = new FieldPass();
 
-  private AbstractInitMethodInstrumentationPass initMethodPass = null;
+  private AbstractInitMethodPass initMethodPass = null;
 
   private final StackSizePass stackSizePass = new StackSizePass();
 
@@ -61,16 +65,16 @@ public class InstrumentationPass implements IPass {
 
   private ProbeGroup probeGroup;
 
-  public InstrumentationPass(final AgentConfigs agentConfigs) {
+  public CoveragePass(final AgentConfigs agentConfigs) {
 
     this.instrumentationLevel = agentConfigs.getInstrumentationLevel();
     switch (this.instrumentationLevel) {
       case FULL:
       default:
-        this.initMethodPass = new InitMethodInstrumentationPass();
+        this.initMethodPass = new InitMethodPass();
         break;
       case OFFLINE:
-        this.initMethodPass = new OfflineInitMethodInstrumentationPass();
+        this.initMethodPass = new OfflineInitMethodPass();
         break;
       case NONE:
         break;
@@ -167,33 +171,59 @@ public class InstrumentationPass implements IPass {
       }
     }
 
+    boolean injectBytecode = this.duplicateCollectorFilter.filter(ctClass) == Outcome.ACCEPT
+        && (this.instrumentationLevel == InstrumentationLevel.FULL
+            || this.instrumentationLevel == InstrumentationLevel.OFFLINE);
+
     MethodInfo methodInfo = ctBehavior.getMethodInfo();
     CodeAttribute ca = methodInfo.getCodeAttribute();
 
     assert ca != null;
     CodeIterator ci = ca.iterator();
 
+    Queue<Integer> blocks = new LinkedList<Integer>();
+    try {
+      ControlFlow cf = new ControlFlow(ctClass, methodInfo);
+      for (Block block : cf.basicBlocks()) {
+        blocks.add(block.position());
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    int index = 0, prevLine = -1, curLine = -1, instrSize = 0;
     while (ci.hasNext()) {
-      int index = ci.next();
-      int curLine = methodInfo.getLineNumber(index);
+      index = ci.next();
+      curLine = methodInfo.getLineNumber(index);
 
       if (curLine == -1) {
         continue;
       }
 
-      Node node = NodeFactory.createNode(ctClass, ctBehavior, curLine);
-      assert node != null;
-      Probe probe = this.probeGroup.registerProbe(node, ctBehavior);
-      assert probe != null;
+      boolean isNewBlock = !blocks.isEmpty() && index >= instrSize + blocks.peek();
+      if (isNewBlock) {
+        blocks.poll();
+      }
 
-      if (this.duplicateCollectorFilter.filter(ctClass) == Outcome.ACCEPT
-          && (this.instrumentationLevel == InstrumentationLevel.FULL
-              || this.instrumentationLevel == InstrumentationLevel.OFFLINE)) {
-        Bytecode bc = this.getInstrumentationCode(ctClass, probe, methodInfo.getConstPool());
-        ci.insert(index, bc.get());
-        instrumented = Outcome.ACCEPT;
-      } else {
-        instrumented = Outcome.REJECT;
+      if (prevLine != curLine || isNewBlock) {
+        // a line is always considered for instrumentation if and only if: 1) it's line number has
+        // not been instrumented; 2) or, if it's in a different block
+
+        Node node = NodeFactory.createNode(ctClass, ctBehavior, curLine);
+        assert node != null;
+        Probe probe = this.probeGroup.registerProbe(node, ctBehavior);
+        assert probe != null;
+
+        if (injectBytecode) {
+          Bytecode bc = this.getInstrumentationCode(ctClass, probe, methodInfo.getConstPool());
+          ci.insert(index, bc.get());
+          instrSize += bc.length();
+          instrumented = Outcome.ACCEPT;
+        } else {
+          instrumented = Outcome.REJECT;
+        }
+
+        prevLine = curLine;
       }
     }
 
