@@ -131,10 +131,13 @@ public class SpectrumReader {
         String probeGroupHash = in.readUTF();
         String probeGroupName = in.readUTF();
         boolean[] hitArray = in.readBooleanArray();
+        //System.out.println("probeGroupHash: \n"+probeGroupHash);
+        //System.out.println("probeGroupName: \n"+probeGroupName);
 
         // instrument probeGroup (in case it has been not been instrumented)
         if (spectrum.getProbeGroupByHash(probeGroupHash) == null) {
           // probeGroup has not been instrumented
+          //System.out.println("instrument");
           try {
             CtClass ctClass = ClassPool.getDefault().get(probeGroupName);
             instrumenter.instrument(ctClass);

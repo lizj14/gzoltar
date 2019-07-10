@@ -1,0 +1,50 @@
+Buildfile: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml
+
+clean:
+   [delete] Deleting directory /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/classes
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/classes
+    [javac] 警告: [options] 未与 -source 1.6 一起设置引导类路径
+    [javac] 1 个警告
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/tests
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/tests
+    [javac] 警告: [options] 未与 -source 1.6 一起设置引导类路径
+    [javac] 1 个警告
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+test:
+[gzoltar:coverage] Enhancing junit with code coverage
+    [junit] Running org.gzoltar.examples.CharacterCounterTest
+    [junit] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.111 sec
+    [junit] Test org.gzoltar.examples.CharacterCounterTest FAILED
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+test:
+[gzoltar:coverage] Enhancing junit with code coverage
+    [junit] Running org.gzoltar.examples.CharacterCounterTest
+    [junit] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.113 sec
+    [junit] Test org.gzoltar.examples.CharacterCounterTest FAILED
+
+report:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

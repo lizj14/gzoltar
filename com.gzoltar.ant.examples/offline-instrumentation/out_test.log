@@ -1,0 +1,455 @@
+Buildfile: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build.xml
+
+clean:
+   [delete] Deleting directory /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/lib/hamcrest-core.jar
+
+compile:
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build/classes
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build/classes
+    [javac] 警告: [options] 未与 -source 1.6 一起设置引导类路径
+    [javac] 1 个警告
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build/tests
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build.xml:72: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build/tests
+    [javac] 警告: [options] 未与 -source 1.6 一起设置引导类路径
+    [javac] 1 个警告
+
+instrument:
+[gzoltar:instrument] * Off-line instrumentation of Java class files and jar files
+[gzoltar:instrument] * Processing
+[gzoltar:instrument]   - org/gzoltar/examples/CharacterCounter.class
+[gzoltar:instrument] ctBehavior: com.gzoltar.internal.javassist.CtConstructor@408d971b[public CharacterCounter ()V]
+[gzoltar:instrument] method info: <init> ()V
+[gzoltar:instrument] code attribute: com.gzoltar.internal.javassist.bytecode.CodeAttribute@477b4cdf
+[gzoltar:instrument] code info: [42, -73, 0, 1, 42, 3, -75, 0, 2, 42, 3, -75, 0, 3, 42, 3, -75, 0, 4, -79]
+[gzoltar:instrument] block :ControlFlow$Block[pos=0, len=20, in=0, exit{}, {}, incoming{}]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 0 curLine: 30
+[gzoltar:instrument] prevLine: -1 instrSize : 0
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 3, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 3, 4, 84, 42, -73, 0, 1, 42, 3, -75, 0, 2, 42, 3, -75, 0, 3, 42, 3, -75, 0, 4, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 7 curLine: 30
+[gzoltar:instrument] prevLine: 30 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 10 curLine: 31
+[gzoltar:instrument] prevLine: 30 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] bc: [-78, 0, 48, 4, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 3, 4, 84, 42, -73, 0, 1, -78, 0, 48, 4, 4, 84, 42, 3, -75, 0, 2, 42, 3, -75, 0, 3, 42, 3, -75, 0, 4, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 17 curLine: 31
+[gzoltar:instrument] prevLine: 31 instrSize : 12
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 18 curLine: 31
+[gzoltar:instrument] prevLine: 31 instrSize : 12
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 21 curLine: 32
+[gzoltar:instrument] prevLine: 31 instrSize : 12
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] bc: [-78, 0, 48, 5, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 3, 4, 84, 42, -73, 0, 1, -78, 0, 48, 4, 4, 84, 42, 3, -75, 0, 2, -78, 0, 48, 5, 4, 84, 42, 3, -75, 0, 3, 42, 3, -75, 0, 4, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 28 curLine: 32
+[gzoltar:instrument] prevLine: 32 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 29 curLine: 32
+[gzoltar:instrument] prevLine: 32 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 32 curLine: 33
+[gzoltar:instrument] prevLine: 32 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] bc: [-78, 0, 48, 6, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 3, 4, 84, 42, -73, 0, 1, -78, 0, 48, 4, 4, 84, 42, 3, -75, 0, 2, -78, 0, 48, 5, 4, 84, 42, 3, -75, 0, 3, -78, 0, 48, 6, 4, 84, 42, 3, -75, 0, 4, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 39 curLine: 33
+[gzoltar:instrument] prevLine: 33 instrSize : 24
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 40 curLine: 33
+[gzoltar:instrument] prevLine: 33 instrSize : 24
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@2925bf5b
+[gzoltar:instrument] index: 43 curLine: 34
+[gzoltar:instrument] prevLine: 33 instrSize : 24
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] bc: [-78, 0, 48, 7, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 3, 4, 84, 42, -73, 0, 1, -78, 0, 48, 4, 4, 84, 42, 3, -75, 0, 2, -78, 0, 48, 5, 4, 84, 42, 3, -75, 0, 3, -78, 0, 48, 6, 4, 84, 42, 3, -75, 0, 4, -78, 0, 48, 7, 4, 84, -79]
+[gzoltar:instrument] ctBehavior: com.gzoltar.internal.javassist.CtMethod@6d582097[public processString (Ljava/lang/String;)V]
+[gzoltar:instrument] method info: processString (Ljava/lang/String;)V
+[gzoltar:instrument] code attribute: com.gzoltar.internal.javassist.bytecode.CodeAttribute@7d8704ef
+[gzoltar:instrument] code info: [43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, 21, 4, 29, -94, 0, 106, 44, 21, 4, 52, 54, 5, 16, 65, 21, 5, -93, 0, 23, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, -106, -79]
+[gzoltar:instrument] block :ControlFlow$Block[pos=0, len=11, in=0, exit{11,}, {}, incoming{}]
+[gzoltar:instrument] block :ControlFlow$Block[pos=11, len=6, in=2, exit{120,17,}, {}, incoming{0, 114, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=17, len=13, in=1, exit{50,30,}, {}, incoming{11, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=30, len=7, in=1, exit{50,37,}, {}, incoming{17, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=37, len=13, in=1, exit{114,}, {}, incoming{30, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=50, len=7, in=2, exit{77,57,}, {}, incoming{17, 30, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=57, len=7, in=1, exit{77,64,}, {}, incoming{50, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=64, len=13, in=1, exit{114,}, {}, incoming{57, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=77, len=7, in=2, exit{104,84,}, {}, incoming{50, 57, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=84, len=7, in=1, exit{104,91,}, {}, incoming{77, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=91, len=13, in=1, exit{114,}, {}, incoming{84, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=104, len=10, in=2, exit{114,}, {}, incoming{77, 84, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=114, len=6, in=4, exit{11,}, {}, incoming{37, 64, 91, 104, }]
+[gzoltar:instrument] block :ControlFlow$Block[pos=120, len=1, in=1, exit{}, {}, incoming{11, }]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 0 curLine: 37
+[gzoltar:instrument] prevLine: -1 instrSize : 0
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, 21, 4, 29, -94, 0, 106, 44, 21, 4, 52, 54, 5, 16, 65, 21, 5, -93, 0, 23, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, -106, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 7 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 10 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 11 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 12 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 13 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 14 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 15 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 17 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 6
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, 106, 44, 21, 4, 52, 54, 5, 16, 65, 21, 5, -93, 0, 23, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, -112, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 25 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 12
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 26 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 12
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 29 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 12
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, 112, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, 16, 65, 21, 5, -93, 0, 23, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, -118, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 36 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 38 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 39 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 41 curLine: 38
+[gzoltar:instrument] prevLine: 37 instrSize : 18
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 6, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, 119, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 23, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, -125, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 50 curLine: 38
+[gzoltar:instrument] prevLine: 38 instrSize : 25
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 52 curLine: 38
+[gzoltar:instrument] prevLine: 38 instrSize : 25
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 55 curLine: 38
+[gzoltar:instrument] prevLine: 38 instrSize : 25
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 6, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, 126, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 30, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 124, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 64 curLine: 38
+[gzoltar:instrument] prevLine: 38 instrSize : 32
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 66 curLine: 38
+[gzoltar:instrument] prevLine: 38 instrSize : 32
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 69 curLine: 39
+[gzoltar:instrument] prevLine: 38 instrSize : 32
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 7, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -123, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 67, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 117, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 77 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 78 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 81 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 82 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 83 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 86 curLine: 39
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 89 curLine: 40
+[gzoltar:instrument] prevLine: 39 instrSize : 39
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -116, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 74, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 23, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 110, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 98 curLine: 40
+[gzoltar:instrument] prevLine: 40 instrSize : 46
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 100 curLine: 40
+[gzoltar:instrument] prevLine: 40 instrSize : 46
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 103 curLine: 40
+[gzoltar:instrument] prevLine: 40 instrSize : 46
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -109, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 81, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 30, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 16, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 103, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 112 curLine: 40
+[gzoltar:instrument] prevLine: 40 instrSize : 53
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 114 curLine: 40
+[gzoltar:instrument] prevLine: 40 instrSize : 53
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 117 curLine: 41
+[gzoltar:instrument] prevLine: 40 instrSize : 53
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 9, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -102, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 88, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 40, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 96, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 125 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 126 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 129 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 130 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 131 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 134 curLine: 41
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 137 curLine: 42
+[gzoltar:instrument] prevLine: 41 instrSize : 60
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 10, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -95, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 95, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 47, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 23, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 89, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 146 curLine: 42
+[gzoltar:instrument] prevLine: 42 instrSize : 67
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 148 curLine: 42
+[gzoltar:instrument] prevLine: 42 instrSize : 67
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 151 curLine: 42
+[gzoltar:instrument] prevLine: 42 instrSize : 67
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 10, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -88, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 102, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 54, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 30, -78, 0, 48, 16, 10, 4, 84, 16, 57, 21, 5, -95, 0, 16, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 82, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 160 curLine: 42
+[gzoltar:instrument] prevLine: 42 instrSize : 74
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 162 curLine: 42
+[gzoltar:instrument] prevLine: 42 instrSize : 74
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 165 curLine: 43
+[gzoltar:instrument] prevLine: 42 instrSize : 74
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 11, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -81, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 109, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 61, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 37, -78, 0, 48, 16, 10, 4, 84, 16, 57, 21, 5, -95, 0, 23, -78, 0, 48, 16, 11, 4, 84, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 13, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 75, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 173 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 174 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 177 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 178 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 179 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 182 curLine: 43
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 185 curLine: 45
+[gzoltar:instrument] prevLine: 43 instrSize : 81
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 12, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -74, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 116, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 68, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 37, -78, 0, 48, 16, 10, 4, 84, 16, 57, 21, 5, -95, 0, 23, -78, 0, 48, 16, 11, 4, 84, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 20, -78, 0, 48, 16, 12, 4, 84, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -124, 4, 1, -89, -1, 68, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 193 curLine: 45
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 194 curLine: 45
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 197 curLine: 45
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 198 curLine: 45
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 199 curLine: 45
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 202 curLine: 37
+[gzoltar:instrument] prevLine: 45 instrSize : 88
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 8, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -68, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 116, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 68, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 37, -78, 0, 48, 16, 10, 4, 84, 16, 57, 21, 5, -95, 0, 23, -78, 0, 48, 16, 11, 4, 84, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 20, -78, 0, 48, 16, 12, 4, 84, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -78, 0, 48, 8, 4, 84, -124, 4, 1, -89, -1, 62, -79]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 211 curLine: 37
+[gzoltar:instrument] prevLine: 37 instrSize : 94
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@13b6aecc
+[gzoltar:instrument] index: 214 curLine: 48
+[gzoltar:instrument] prevLine: 37 instrSize : 94
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 13, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 8, 4, 84, 43, -74, 0, 5, 77, 44, -66, 62, 3, 54, 4, -78, 0, 48, 8, 4, 84, 21, 4, 29, -94, 0, -68, -78, 0, 48, 8, 4, 84, 44, 21, 4, 52, 54, 5, -78, 0, 48, 16, 6, 4, 84, 16, 65, 21, 5, -93, 0, 37, -78, 0, 48, 16, 6, 4, 84, 16, 90, 21, 5, -95, 0, 23, -78, 0, 48, 16, 7, 4, 84, 42, 89, -76, 0, 2, 5, 96, -75, 0, 2, -89, 0, 116, -78, 0, 48, 16, 8, 4, 84, 16, 97, 21, 5, -93, 0, 37, -78, 0, 48, 16, 8, 4, 84, 16, 122, 21, 5, -95, 0, 23, -78, 0, 48, 16, 9, 4, 84, 42, 89, -76, 0, 2, 4, 96, -75, 0, 2, -89, 0, 68, -78, 0, 48, 16, 10, 4, 84, 16, 48, 21, 5, -93, 0, 37, -78, 0, 48, 16, 10, 4, 84, 16, 57, 21, 5, -95, 0, 23, -78, 0, 48, 16, 11, 4, 84, 42, 89, -76, 0, 3, 4, 96, -75, 0, 3, -89, 0, 20, -78, 0, 48, 16, 12, 4, 84, 42, 89, -76, 0, 4, 4, 96, -75, 0, 4, -78, 0, 48, 8, 4, 84, -124, 4, 1, -89, -1, 62, -78, 0, 48, 16, 13, 4, 84, -79]
+[gzoltar:instrument] ctBehavior: com.gzoltar.internal.javassist.CtMethod@8343f45e[public getNumLetters ()I]
+[gzoltar:instrument] method info: getNumLetters ()I
+[gzoltar:instrument] code attribute: com.gzoltar.internal.javassist.bytecode.CodeAttribute@1f59a598
+[gzoltar:instrument] code info: [42, -76, 0, 2, -84]
+[gzoltar:instrument] block :ControlFlow$Block[pos=0, len=5, in=0, exit{}, {}, incoming{}]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@1e178745
+[gzoltar:instrument] index: 0 curLine: 51
+[gzoltar:instrument] prevLine: -1 instrSize : 0
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 14, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 16, 14, 4, 84, 42, -76, 0, 2, -84]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@1e178745
+[gzoltar:instrument] index: 8 curLine: 51
+[gzoltar:instrument] prevLine: 51 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@1e178745
+[gzoltar:instrument] index: 11 curLine: 51
+[gzoltar:instrument] prevLine: 51 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] ctBehavior: com.gzoltar.internal.javassist.CtMethod@9ace80d7[public getNumDigits ()I]
+[gzoltar:instrument] method info: getNumDigits ()I
+[gzoltar:instrument] code attribute: com.gzoltar.internal.javassist.bytecode.CodeAttribute@192c3f1e
+[gzoltar:instrument] code info: [42, -76, 0, 3, -84]
+[gzoltar:instrument] block :ControlFlow$Block[pos=0, len=5, in=0, exit{}, {}, incoming{}]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@26b3fd41
+[gzoltar:instrument] index: 0 curLine: 55
+[gzoltar:instrument] prevLine: -1 instrSize : 0
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 15, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 16, 15, 4, 84, 42, -76, 0, 3, -84]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@26b3fd41
+[gzoltar:instrument] index: 8 curLine: 55
+[gzoltar:instrument] prevLine: 55 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@26b3fd41
+[gzoltar:instrument] index: 11 curLine: 55
+[gzoltar:instrument] prevLine: 55 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] ctBehavior: com.gzoltar.internal.javassist.CtMethod@889885ab[public getNumOtherCharacters ()I]
+[gzoltar:instrument] method info: getNumOtherCharacters ()I
+[gzoltar:instrument] code attribute: com.gzoltar.internal.javassist.bytecode.CodeAttribute@7494f96a
+[gzoltar:instrument] code info: [42, -76, 0, 4, -84]
+[gzoltar:instrument] block :ControlFlow$Block[pos=0, len=5, in=0, exit{}, {}, incoming{}]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@561b6512
+[gzoltar:instrument] index: 0 curLine: 59
+[gzoltar:instrument] prevLine: -1 instrSize : 0
+[gzoltar:instrument] isnewBlock: true
+[gzoltar:instrument] bc: [-78, 0, 48, 16, 16, 4, 84]
+[gzoltar:instrument] after insert: [-78, 0, 48, 16, 16, 4, 84, 42, -76, 0, 4, -84]
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@561b6512
+[gzoltar:instrument] index: 8 curLine: 59
+[gzoltar:instrument] prevLine: 59 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] code iterator: com.gzoltar.internal.javassist.bytecode.CodeIterator@561b6512
+[gzoltar:instrument] index: 11 curLine: 59
+[gzoltar:instrument] prevLine: 59 instrSize : 7
+[gzoltar:instrument] isnewBlock: false
+[gzoltar:instrument] * 1 classes instrumented to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/offline-instrumentation/build/instrumented-classes
+[gzoltar:instrument] * Done!
+
+test:
+    [junit] Running org.gzoltar.examples.CharacterCounterTest
+    [junit] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+
+report:
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

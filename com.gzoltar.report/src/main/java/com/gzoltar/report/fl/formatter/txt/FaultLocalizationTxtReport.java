@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import com.gzoltar.core.model.Node;
 import com.gzoltar.core.model.Transaction;
 import com.gzoltar.core.model.TransactionOutcome;
@@ -48,6 +49,11 @@ public class FaultLocalizationTxtReport implements IFaultLocalizationReportForma
   @Override
   public void generateFaultLocalizationReport(final File outputDirectory, final ISpectrum spectrum,
       final List<IFormula> formulas) throws IOException {
+    //for learning the info of nodes
+    //for(Node node: spectrum.getNodes()){
+    //  System.out.println(node);
+    //}
+
     if (!outputDirectory.exists()) {
       outputDirectory.mkdirs();
     }
@@ -95,12 +101,15 @@ public class FaultLocalizationTxtReport implements IFaultLocalizationReportForma
         new PrintWriter(outputDirectory + File.separator + SPECTRA_FILE_NAME, "UTF-8");
 
     // header
-    spectraWriter.println("name");
+    spectraWriter.println("name;hit_pass;hit_fail;miss_pass;miss_fail");
 
     // content
     for (ProbeGroup probeGroup : probeGroups) {
       for (Probe probe : probeGroup.getProbes()) {
-        spectraWriter.println(probe.getNode().getNameWithLineNumber());
+        Map<String, Integer> result = probeGroup.getHitResult(transactions, probe);
+        spectraWriter.println(probe.getNode().getNameWithLineNumber()+";"
+                +result.get("hit_pass")+";"+result.get("hit_fail")+";"+
+                result.get("miss_pass")+";"+result.get("miss_fail"));
       }
     }
 
@@ -111,6 +120,9 @@ public class FaultLocalizationTxtReport implements IFaultLocalizationReportForma
      */
 
     List<Node> nodes = new ArrayList<Node>(spectrum.getNodes());
+    //for(Node node: nodes){
+    //  System.out.println(node);
+    //}
     for (final IFormula formula : formulas) {
 
       PrintWriter formulaWriter = new PrintWriter(outputDirectory + File.separator

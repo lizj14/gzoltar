@@ -166,13 +166,18 @@ public class CoverageTask extends AbstractCoverageTask implements TaskContainer 
       final UnknownElement el = new UnknownElement("jvmarg");
       el.setTaskName("jvmarg");
       el.setQName("jvmarg");
+      System.out.println("jvmargs: "+ el);
 
+      System.out.println("task before");
+      System.out.println(task);
       final RuntimeConfigurable runtimeConfigurableWrapper = el.getRuntimeConfigurableWrapper();
       runtimeConfigurableWrapper.setAttribute("value", getLaunchingArgument());
 
       task.getRuntimeConfigurableWrapper().addChild(runtimeConfigurableWrapper);
 
       ((UnknownElement) task).addChild(el);
+      System.out.println("task after enhance");
+      System.out.println(task);
     }
   }
 }

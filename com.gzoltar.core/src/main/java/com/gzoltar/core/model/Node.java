@@ -101,6 +101,8 @@ public class Node {
         + (this.type != NodeType.LINE ? NodeType.LINE.getSymbol() + this.lineNumber : "");
   }
 
+
+
   /**
    * 
    * @return
@@ -271,6 +273,8 @@ public class Node {
     }
     assert this.suspiciousnessValues != null;
     assert this.suspiciousnessValues.containsKey(formulaName);
+    //System.out.println("formulaName: "+formulaName);
+    //System.out.println(this.suspiciousnessValues);
     return this.suspiciousnessValues.get(formulaName);
   }
 

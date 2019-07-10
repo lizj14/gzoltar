@@ -24,6 +24,8 @@ import com.gzoltar.core.spectrum.FilteredSpectrum;
 import com.gzoltar.core.spectrum.ISpectrum;
 import com.gzoltar.core.spectrum.SpectrumReader;
 import com.gzoltar.sfl.SFL;
+import com.gzoltar.core.model.Node;
+import com.gzoltar.core.model.Transaction;
 
 public class FaultLocalization {
 
@@ -58,12 +60,27 @@ public class FaultLocalization {
     SpectrumReader spectrumReader = new SpectrumReader(buildLocation, agentConfigs, inStream);
     spectrumReader.read();
     ISpectrum spectrum = spectrumReader.getSpectrum();
+/*    System.out.println("nodes before filtering");
+    for(Node node: spectrum.getNodes()){
+      System.out.println(node);
+    }*/
 
     // filter a spectrum object according to user's preferences
     FilteredSpectrum filter = new FilteredSpectrum(agentConfigs);
     ISpectrum filteredSpectrum = filter.filter(spectrum);
+//    System.out.println("transanctions after filtering");
+//    for(Transaction transaction: filteredSpectrum.getTransactions()){
+//      System.out.println(transaction);
+//    }
 
     this.fl.diagnose(filteredSpectrum);
+
+/*
+    System.out.println("nodes after diagnose");
+    for(Node node: filteredSpectrum.getNodes()){
+      System.out.println(node);
+    }
+*/
 
     return filteredSpectrum;
   }

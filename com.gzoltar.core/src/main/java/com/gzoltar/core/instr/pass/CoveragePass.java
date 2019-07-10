@@ -16,10 +16,8 @@
  */
 package com.gzoltar.core.instr.pass;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+
 import com.gzoltar.core.AgentConfigs;
 import com.gzoltar.core.instr.InstrumentationConstants;
 import com.gzoltar.core.instr.InstrumentationLevel;
@@ -106,6 +104,7 @@ public class CoveragePass implements IPass {
     this.probeGroup = new ProbeGroup(hash, ctClass);
 
     for (CtBehavior ctBehavior : ctClass.getDeclaredBehaviors()) {
+      System.out.println("ctBehavior: " + ctBehavior);
       boolean behaviorInstrumented =
           this.transform(ctClass, ctBehavior).equals(Outcome.REJECT) ? false : true;
       instrumented = instrumented || behaviorInstrumented;
@@ -164,6 +163,7 @@ public class CoveragePass implements IPass {
     for (IFilter filter : this.filters) {
       switch (filter.filter(ctBehavior)) {
         case REJECT:
+          //System.out.println("reject because of "+ filter);
           return instrumented;
         case ACCEPT:
         default:
@@ -176,7 +176,10 @@ public class CoveragePass implements IPass {
             || this.instrumentationLevel == InstrumentationLevel.OFFLINE);
 
     MethodInfo methodInfo = ctBehavior.getMethodInfo();
+    System.out.println("method info: "+ methodInfo);
     CodeAttribute ca = methodInfo.getCodeAttribute();
+    System.out.println("code attribute: " + ca);
+    System.out.println("code info: " + Arrays.toString(ca.getCode()));
 
     assert ca != null;
     CodeIterator ci = ca.iterator();
@@ -185,6 +188,7 @@ public class CoveragePass implements IPass {
     try {
       ControlFlow cf = new ControlFlow(ctClass, methodInfo);
       for (Block block : cf.basicBlocks()) {
+        System.out.println("block :" + block);
         blocks.add(block.position());
       }
     } catch (Exception e) {
@@ -195,6 +199,8 @@ public class CoveragePass implements IPass {
     while (ci.hasNext()) {
       index = ci.next();
       curLine = methodInfo.getLineNumber(index);
+      System.out.println("code iterator: " + ci);
+
 
       if (curLine == -1) {
         continue;
@@ -204,6 +210,11 @@ public class CoveragePass implements IPass {
       if (isNewBlock) {
         blocks.poll();
       }
+
+      System.out.println("index: " + index + " curLine: " + curLine +
+              "\nprevLine: " + prevLine + " instrSize : " + instrSize
+              + "\nisnewBlock: " + isNewBlock
+      );
 
       if (prevLine != curLine || isNewBlock) {
         // a line is always considered for instrumentation if and only if: 1) it's line number has
@@ -216,9 +227,11 @@ public class CoveragePass implements IPass {
 
         if (injectBytecode) {
           Bytecode bc = this.getInstrumentationCode(ctClass, probe, methodInfo.getConstPool());
+          //System.out.println("bc: " + Arrays.toString(bc.get()));
           ci.insert(index, bc.get());
           instrSize += bc.length();
           instrumented = Outcome.ACCEPT;
+          //System.out.println("after insert: " + Arrays.toString(ci.get().getCode()));
         } else {
           instrumented = Outcome.REJECT;
         }

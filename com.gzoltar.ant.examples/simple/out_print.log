@@ -1,0 +1,121 @@
+Buildfile: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml
+
+clean:
+   [delete] Deleting directory /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/classes
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/classes
+    [javac] 警告: [options] 未与 -source 6 一起设置引导类路径
+    [javac] 警告: [options] 源值6已过时, 将在未来所有发行版中删除
+    [javac] 警告: [options] 目标值1.6已过时, 将在未来所有发行版中删除
+    [javac] 警告: [options] 要隐藏有关已过时选项的警告, 请使用 -Xlint:-options。
+    [javac] 4 个警告
+    [mkdir] Created dir: /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/tests
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build/tests
+    [javac] 警告: [options] 未与 -source 6 一起设置引导类路径
+    [javac] 警告: [options] 源值6已过时, 将在未来所有发行版中删除
+    [javac] 警告: [options] 目标值1.6已过时, 将在未来所有发行版中删除
+    [javac] 警告: [options] 要隐藏有关已过时选项的警告, 请使用 -Xlint:-options。
+    [javac] 4 个警告
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+test:
+[gzoltar:coverage] Enhancing junit with code coverage
+[gzoltar:coverage] jvmargs: org.apache.tools.ant.UnknownElement@4241e0f4
+[gzoltar:coverage] task before
+[gzoltar:coverage] org.apache.tools.ant.UnknownElement@4ebff610
+[gzoltar:coverage] task after enhance
+[gzoltar:coverage] org.apache.tools.ant.UnknownElement@4ebff610
+    [junit] Running org.gzoltar.examples.CharacterCounterTest
+    [junit] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec
+
+install-deps:
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/junit.jar
+      [get] Destination already exists (skipping): /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/lib/hamcrest-core.jar
+
+compile:
+    [javac] /home/lizijie/research/new_work/gzoltar/com.gzoltar.ant.examples/simple/build.xml:69: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+test:
+[gzoltar:coverage] Enhancing junit with code coverage
+[gzoltar:coverage] jvmargs: org.apache.tools.ant.UnknownElement@74eb909f
+[gzoltar:coverage] task before
+[gzoltar:coverage] org.apache.tools.ant.UnknownElement@4ebff610
+[gzoltar:coverage] task after enhance
+[gzoltar:coverage] org.apache.tools.ant.UnknownElement@4ebff610
+    [junit] Running org.gzoltar.examples.CharacterCounterTest
+    [junit] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec
+
+report:
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] instrument
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+[gzoltar:fl-report] probeGroupHash: 
+[gzoltar:fl-report] 16d9f5e8dab6d2380c5d9780f6a6b159
+[gzoltar:fl-report] probeGroupName: 
+[gzoltar:fl-report] org.gzoltar.examples.CharacterCounter
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

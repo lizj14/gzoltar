@@ -16,10 +16,15 @@
  */
 package com.gzoltar.core.runtime;
 
+//import com.gzoltar.core.model.Transaction;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import com.gzoltar.core.model.Node;
 import javassist.CtBehavior;
+
+//import java.util.LinkedHashMap;
+//import java.util.List;
+//import java.util.Map;
 
 public final class Probe {
 
@@ -54,6 +59,9 @@ public final class Probe {
   public Node getNode() {
     return this.node;
   }
+
+
+
 
   /**
    * Returns the correspondent {@link javassist.CtBehavior} object of a probe.

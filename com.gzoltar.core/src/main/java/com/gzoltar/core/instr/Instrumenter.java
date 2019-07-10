@@ -99,6 +99,7 @@ public class Instrumenter {
    */
   public byte[] instrument(final CtClass cc) throws Exception {
     for (IPass p : this.passes) {
+      //System.out.println("IPass" +p);
       switch (p.transform(cc)) {
         case REJECT:
           cc.detach();
@@ -125,6 +126,7 @@ public class Instrumenter {
    */
   public int instrumentToFile(final InputStream input, final OutputStream output) throws Exception {
     final ContentTypeDetector detector = new ContentTypeDetector(input);
+    //System.out.println("detector: "+ detector.getType());
     switch (detector.getType()) {
       case ContentTypeDetector.CLASSFILE:
         output.write(this.instrument(detector.getInputStream()));

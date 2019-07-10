@@ -17,7 +17,11 @@
 package com.gzoltar.core.runtime;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.gzoltar.core.model.Transaction;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import com.gzoltar.core.model.Node;
@@ -204,6 +208,40 @@ public final class ProbeGroup {
     builder.append(this.probes, probeGroup.probes);
 
     return builder.isEquals();
+  }
+
+  public Map<String, Integer> getHitResult(List<Transaction> transactions, Probe probe){
+    Map<String, Integer> result = new LinkedHashMap<String, Integer>();
+    int hit_pass = 0;
+    int hit_fail = 0;
+    int miss_pass = 0;
+    int miss_fail = 0;
+
+    for (Transaction transaction : transactions) {
+      boolean hasFailed = transaction.hasFailed();
+
+      if (transaction.isProbeActived(this, probe.getArrayIndex())) {
+        if (hasFailed) {
+          hit_fail++;
+        } else {
+          hit_pass++;
+        }
+      } else {
+        if (hasFailed) {
+          miss_fail++;
+        } else {
+          miss_pass++;
+        }
+      }
+    }
+
+
+    result.put("hit_pass", hit_pass);
+    result.put("hit_fail", hit_fail);
+    result.put("miss_pass", miss_pass);
+    result.put("miss_fail", miss_fail);
+
+    return result;
   }
 
 }
