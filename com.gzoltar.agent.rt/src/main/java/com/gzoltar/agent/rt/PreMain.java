@@ -36,6 +36,7 @@ public final class PreMain {
    * @throws Exception in case initialization fails
    */
   public static void premain(final String agentArgs, final Instrumentation inst) throws Exception {
+    System.out.println("PreMain used");
     final AgentConfigs agentConfigs = new AgentConfigs(agentArgs);
     IAgent agent = Agent.getInstance(agentConfigs);
     agent.startup();

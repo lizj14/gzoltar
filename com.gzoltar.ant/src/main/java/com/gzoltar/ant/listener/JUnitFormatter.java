@@ -17,6 +17,7 @@
 package com.gzoltar.ant.listener;
 
 import java.io.OutputStream;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.tools.ant.BuildException;
@@ -25,6 +26,7 @@ import org.apache.tools.ant.taskdefs.optional.junit.JUnitTest;
 import com.gzoltar.core.listeners.Listener;
 import junit.framework.AssertionFailedError;
 import junit.framework.Test;
+import sun.org.mozilla.javascript.ContextFactory;
 
 /**
  * JUnit listener.
@@ -132,6 +134,7 @@ public class JUnitFormatter extends Listener implements JUnitResultFormatter {
       }
     }
 
+    System.out.println(className + Listener.TEST_CLASS_NAME_SEPARATOR + methodName);
     return className + Listener.TEST_CLASS_NAME_SEPARATOR + methodName;
   }
 

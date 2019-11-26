@@ -104,7 +104,7 @@ public class CoveragePass implements IPass {
     this.probeGroup = new ProbeGroup(hash, ctClass);
 
     for (CtBehavior ctBehavior : ctClass.getDeclaredBehaviors()) {
-      System.out.println("ctBehavior: " + ctBehavior);
+      //System.out.println("ctBehavior: " + ctBehavior);
       boolean behaviorInstrumented =
           this.transform(ctClass, ctBehavior).equals(Outcome.REJECT) ? false : true;
       instrumented = instrumented || behaviorInstrumented;
@@ -176,10 +176,10 @@ public class CoveragePass implements IPass {
             || this.instrumentationLevel == InstrumentationLevel.OFFLINE);
 
     MethodInfo methodInfo = ctBehavior.getMethodInfo();
-    System.out.println("method info: "+ methodInfo);
+    //System.out.println("method info: "+ methodInfo);
     CodeAttribute ca = methodInfo.getCodeAttribute();
-    System.out.println("code attribute: " + ca);
-    System.out.println("code info: " + Arrays.toString(ca.getCode()));
+    //System.out.println("code attribute: " + ca);
+    //System.out.println("code info: " + Arrays.toString(ca.getCode()));
 
     assert ca != null;
     CodeIterator ci = ca.iterator();
@@ -188,7 +188,7 @@ public class CoveragePass implements IPass {
     try {
       ControlFlow cf = new ControlFlow(ctClass, methodInfo);
       for (Block block : cf.basicBlocks()) {
-        System.out.println("block :" + block);
+        //System.out.println("block :" + block);
         blocks.add(block.position());
       }
     } catch (Exception e) {
@@ -199,7 +199,7 @@ public class CoveragePass implements IPass {
     while (ci.hasNext()) {
       index = ci.next();
       curLine = methodInfo.getLineNumber(index);
-      System.out.println("code iterator: " + ci);
+      //System.out.println("code iterator: " + ci);
 
 
       if (curLine == -1) {
@@ -211,10 +211,10 @@ public class CoveragePass implements IPass {
         blocks.poll();
       }
 
-      System.out.println("index: " + index + " curLine: " + curLine +
-              "\nprevLine: " + prevLine + " instrSize : " + instrSize
-              + "\nisnewBlock: " + isNewBlock
-      );
+      //System.out.println("index: " + index + " curLine: " + curLine +
+      //        "\nprevLine: " + prevLine + " instrSize : " + instrSize
+      //        + "\nisnewBlock: " + isNewBlock
+      //);
 
       if (prevLine != curLine || isNewBlock) {
         // a line is always considered for instrumentation if and only if: 1) it's line number has
